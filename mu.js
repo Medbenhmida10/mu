@@ -170,7 +170,10 @@
 
                             sap.ui.getCore().setModel(oModel, that.widgetName);
                         },
-
+handleSelectChange: function (oEvent) {
+			var mode = oEvent.getParameter("selectedItem").getKey();
+			this.byId("Tree").setMode(mode);
+		},
                         handleButtonPress: function (evt) {
                             MessageToast.show("Button pressed");
 
