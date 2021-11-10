@@ -84,7 +84,7 @@
 
         let div0 = document.createElement('div');
         // div0.innerHTML = '<script id="DARSHAN" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">    <Tree id="Tree" items="{' + widgetName + '}" mode="MultiSelect"><CustomTreeItem>            <FlexBox alignItems="Start" width="100%">            <items><Button icon="{ref}" press="handleButtonPress" class="sapUiSmallMarginEnd" />        <Input value="{text}"><layoutData><FlexItemData growFactor="1" /></layoutData></Input></items></FlexBox></CustomTreeItem></Tree></mvc:View></script>';
-       div0.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"><Tree id="Tree" items="{' + widgetName + '>/}" mode="MultiSelect"><CustomTreeItem><FlexBox alignItems="Start" width="100%"><items><Input value="{' + widgetName + '>text}"><layoutData><FlexItemData growFactor="1" /></layoutData></Input></items></FlexBox></CustomTreeItem></Tree></mvc:View></script>';
+        div0.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"><Tree id="Tree" items="{' + widgetName + '>/}" mode="MultiSelect"><CustomTreeItem><FlexBox alignItems="Start" width="100%"><items><Input value="{' + widgetName + '>text}"><layoutData><FlexItemData growFactor="1" /></layoutData></Input></items></FlexBox></CustomTreeItem></Tree></mvc:View></script>';
         //  div0.innerHTML = '<?xml version="1.0"?><script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View height="100%" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" controllerName="myView.Template"><l:VerticalLayout class="sapUiContentPadding" width="100%"><l:content><MultiInput width="100%" id="multiInput" suggestionItems="{' + widgetName + '>/}" valueHelpRequest="handleValueHelp"><core:Item key="{' + widgetName + '>partner}" text="{' + widgetName + '>partner}" /></MultiInput></l:content><Button id="buttonId" class="sapUiSmallMarginBottom" text="Get Score" width="150px" press=".onButtonPress" /></l:VerticalLayout></mvc:View></script>';
         _shadowRoot.appendChild(div0);
 
@@ -167,10 +167,67 @@
 
                             console.log(oModel);
                             this.getView().setModel(oModel, that.widgetName);
-
+                            this.getView().byId("Tree").setModel(oModel, that.widgetName);
                             sap.ui.getCore().setModel(oModel, that.widgetName);
                         },
+                        onAfterRendering: function (evt) {
+                            var oModel = new JSONModel([
+                                {
+                                    "text": "Node1",
+                                    "ref": "sap-icon://attachment-audio",
+                                    "nodes":
+                                    [
+                                        {
+                                            "text": "Node1-1",
+                                            "ref": "sap-icon://attachment-e-pub",
+                                            "nodes":[
+                                                {
+                                                    "text": "Node1-1-1",
+                                                    "ref": "sap-icon://attachment-html"
+                                                },
+                                                {
+                                                    "text": "Node1-1-2",
+                                                    "ref": "sap-icon://attachment-photo",
+                                                    "nodes":[
+                                                        {
+                                                            "text": "Node1-1-2-1",
+                                                            "ref": "sap-icon://attachment-text-file",
+                                                            "nodes":[
+                                                                {
+                                                                    "text": "Node1-1-2-1-1",
+                                                                    "ref": "sap-icon://attachment-video"
+                                                                },
+                                                                {
+                                                                    "text": "Node1-1-2-1-2",
+                                                                    "ref": "sap-icon://attachment-zip-file"
+                                                                },
+                                                                {
+                                                                    "text": "Node1-1-2-1-3",
+                                                                    "ref": "sap-icon://course-program"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "text": "Node1-2",
+                                            "ref": "sap-icon://create"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "text": "Node2",
+                                    "ref": "sap-icon://customer-financial-fact-sheet"
+                                }
+                            ]);
 
+                            console.log(oModel);
+                            this.getView().setModel(oModel, that.widgetName);
+                            this.getView().byId("Tree").setModel(oModel, that.widgetName);
+                            sap.ui.getCore().setModel(oModel, that.widgetName);
+                        },
                         handleButtonPress: function (evt) {
                             MessageToast.show("Button pressed");
 
