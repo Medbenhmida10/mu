@@ -200,7 +200,7 @@
 
         let div0 = document.createElement('div');
         // Custom Tree Selection
-        div0.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core"	xmlns:mvc="sap.ui.core.mvc"	xmlns="sap.m"><ScrollContainer horizontal="true" vertical="true" focusable="true">  <Tree	id="Tree" items="{' + widgetName + '>/}" mode="SingleSelect"	includeItemInSelection="true"><headerToolbar><Toolbar><content><Title text="Nodes" level="H2" /><ToolbarSpacer /><Select selectedKey="SingleSelect" change="handleSelectChange"><items><core:Item key="SingleSelectLeft" text="Single Selection" /><core:Item key="MultiSelect" text="Multi Selection" /></items></Select></content></Toolbar></headerToolbar><StandardTreeItem title="{' + widgetName + '>text}"/></Tree></ScrollContainer></mvc:View></script>' 
+        div0.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"><ScrollContainer horizontal="true" vertical="true" focusable="true">  <Tree   id="Tree" items="{' + widgetName + '>/}" mode="SingleSelect"  rowSelectionChange="onSelect"  includeItemInSelection="true"><headerToolbar><Toolbar><content><Title text="Nodes" level="H2" /><ToolbarSpacer /><Select selectedKey="SingleSelect" change="handleSelectChange"><items><core:Item key="SingleSelectLeft" text="Single Selection" /><core:Item key="MultiSelect" text="Multi Selection" /></items></Select></content></Toolbar></headerToolbar><StandardTreeItem title="{' + widgetName + '>text}"/></Tree></ScrollContainer></mvc:View></script>' 
         _shadowRoot.appendChild(div0);
 
         if (that._firstConnection === 1) {            
@@ -242,7 +242,10 @@
                             // this.getView().setModel(oModel, that.widgetName);
                             sap.ui.getCore().setModel(oModel, that.widgetName);
                         },
-                
+                        onSelect: function (oEvent) {
+                            alert(oEvent)
+                        },
+
                         handleSelectChange: function (oEvent) {
                             var mode = oEvent.getParameter("selectedItem").getKey();
                             this.byId("Tree").setMode(mode);
