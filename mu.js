@@ -244,7 +244,7 @@
                         },
                         onSelect: function (oEvent) {
                             var listselected=''
-                            for (var i=0 ; this.getView().byId("Tree").getSelectedItems().length ; i++){
+                            for (var i=0 ; i<this.getView().byId("Tree").getSelectedItems().length ; i++){
                                 listselected += this.getView().byId("Tree").getSelectedItems()[i].getBindingContext("Multiinput_1").getObject().text + ","
                             }
                             new sap.m.MessageToast.show(listselected)
