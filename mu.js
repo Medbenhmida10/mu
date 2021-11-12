@@ -243,7 +243,7 @@
                             sap.ui.getCore().setModel(oModel, that.widgetName);
                         },
                         onSelect: function (oEvent) {
-                            alert(oEvent)
+                            new sap.m.MessageToast.show(oEvent.getParameters().listItem.getTitle())
                         },
 
                         handleSelectChange: function (oEvent) {
