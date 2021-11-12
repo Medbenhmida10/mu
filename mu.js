@@ -243,7 +243,10 @@
                             sap.ui.getCore().setModel(oModel, that.widgetName);
                         },
                         onSelect: function (oEvent) {
-                            new sap.m.MessageToast.show(oEvent.getParameters().listItem.getTitle())
+                            for (var i=0 ; this.getView().byId("Tree").getSelectedItems().length ; i++){
+                                var listselected = listselected + this.getView().byId("Tree").getSelectedItems()[i].getBindingContext("Multiinput_1").getObject().text
+                                listselected.show
+                            }
                         },
 
                         handleSelectChange: function (oEvent) {
