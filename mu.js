@@ -98,7 +98,7 @@
  /*--------------------------------------------------------------------------------------------------------------- */
  /*--------------------------End: Main Class ------------------------------------- */ 
 
-    customElements.define("com-ds-dsds-sap-sac-multiinput", MultiInput);
+    customElements.define("com-ds-dsds-sap-sac-mu", MultiInput);
 
 
     function loadthis(that, changedProperties) {
