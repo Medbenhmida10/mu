@@ -287,7 +287,7 @@
                         },
                             onLiveChange: function(event) {
                                 const query = event.getParameter("newValue").trim();
-                                this.byId("Tree").getBinding("items").filter(query ? new Filter({
+                                this.byId("Tree").getBinding("items").filter(query ? new sap.ui.model.Filter({
                                 path: "text",
                                 operator: "Contains",
                                 value1: query,
