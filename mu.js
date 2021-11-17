@@ -285,6 +285,14 @@
 
                             //  console.log(unit);
                         },
+                            onLiveChange: function(event) {
+                                const query = event.getParameter("newValue").trim();
+                                this.byId("Tree").getBinding("items").filter(query ? new Filter({
+                                path: "text",
+                                operator: "Contains",
+                                value1: query,
+                                }) : null);
+                                },
 
                         handleSelectChange: function (oEvent) {
                             var mode = oEvent.getParameter("selectedItem").getKey();
