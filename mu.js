@@ -105,7 +105,6 @@
 
         var that_ = that;
         widgetName = changedProperties.widgetName;
-        alert(widgetName)
 
  /*--------------------------------------------------------------------------------------------------------------- */
  /*--------------------------Start: Data from SAC and prepare for JSON Model ------------------------------------- */ 
