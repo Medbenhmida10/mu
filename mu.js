@@ -292,6 +292,7 @@
                                 operator: "Contains",
                                 value1: query,
                                 }) : null);
+                                this.byId("Tree").expandToLevel(9999);
                                 },
 
                         handleSelectChange: function (oEvent) {
