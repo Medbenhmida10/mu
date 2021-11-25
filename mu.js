@@ -277,7 +277,6 @@
                             for (var i = 0; i < this.getView().byId("Tree").getSelectedItems().length; i++) {
                                 listselected += this.getView().byId("Tree").getSelectedItems()[i].getBindingContext("Multiinput_1").getObject().text + ","
                             }
-new sap.m.MessageToast.show(this.getView().byId("Tree").getSelectedItems()[i].getBindingContext("Multiinput_1").getObject().id)
                             console.log(listselected);
                             _unit = listselected;
                             // new sap.m.MessageToast.show(_unit)
