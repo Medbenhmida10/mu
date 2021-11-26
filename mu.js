@@ -118,8 +118,7 @@
 
             for (var a = 0; a < rowData[0].length; a++) {
 
-                var node0 = { text: rowData[0][a].Description_a5y1o06718.id,
-                              id0 = rowData[0][a].NODEID.id};
+                var node0 = { text: rowData[0][a].Description_a5y1o06718.id };
                 var id0 = rowData[0][a].NODEID.id;
                 node0.nodes = [];
 
@@ -277,6 +276,7 @@
                             for (var i = 0; i < this.getView().byId("Tree").getSelectedItems().length; i++) {
                                 listselected += this.getView().byId("Tree").getSelectedItems()[i].getBindingContext("Multiinput_1").getObject().text + ","
                             }
+
                             console.log(listselected);
                             _unit = listselected;
                             // new sap.m.MessageToast.show(_unit)
