@@ -259,11 +259,7 @@
                     "use strict";
 
                     var PageController = Controller.extend("myView.Template", {
-                        onAfterRendering: function () {
-
-                            this.byId("Tree").expandToLevel(9999);
-                            this.byId("Tree").getItems()[3].setSelected(true);
-                        },
+                        
                         onInit: function () {
 
 
@@ -275,6 +271,9 @@
 
                             // this.getView().setModel(oModel, that.widgetName);
                             sap.ui.getCore().setModel(oModel, that.widgetName);
+                        },
+                        onAfterRendering: function () {
+
                             this.byId("Tree").expandToLevel(9999);
                             this.byId("Tree").getItems()[3].setSelected(true);
                         },
