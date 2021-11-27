@@ -259,7 +259,7 @@
                     "use strict";
 
                     var PageController = Controller.extend("myView.Template", {
-                        onInit: function () {
+                        onAfterRendering: function () {
 
 
                             console.log(that._export_settings.footer);
