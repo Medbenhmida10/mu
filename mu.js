@@ -261,6 +261,11 @@
                     var PageController = Controller.extend("myView.Template", {
                         onAfterRendering: function () {
 
+                            this.byId("Tree").expandToLevel(9999);
+                            this.byId("Tree").getItems()[3].setSelected(true);
+                        },
+                        onInit: function () {
+
 
                             console.log(that._export_settings.footer);
                             // set explored app's demo model on this sample
