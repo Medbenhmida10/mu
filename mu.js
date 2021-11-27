@@ -262,8 +262,6 @@
                         
                         onInit: function () {
                              var that=this
-
-                            console.log(that._export_settings.footer);
                             // set explored app's demo model on this sample
                             var oModel = new JSONModel(data);
 
