@@ -261,7 +261,7 @@
                     var PageController = Controller.extend("myView.Template", {
                         
                         onInit: function () {
-
+                             var that=this
 
                             console.log(that._export_settings.footer);
                             // set explored app's demo model on this sample
@@ -271,11 +271,14 @@
 
                             // this.getView().setModel(oModel, that.widgetName);
                             sap.ui.getCore().setModel(oModel, that.widgetName);
+                            oModel.attachRequestCompleted(function(oEvent){
+                                that.byId("Tree").expandToLevel(9999);
+                                that.byId("Tree").getItems()[3].setSelected(true);
+                            });
                         },
                         onAfterRendering: function () {
 
-                            this.byId("Tree").expandToLevel(9999);
-                            this.byId("Tree").getItems()[3].setSelected(true);
+                            
                         },
                         onSelect: function (oEvent) {
                             var listselected = ''
