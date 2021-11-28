@@ -270,8 +270,9 @@
                             sap.ui.getCore().setModel(oModel, that.widgetName);
                         },
                         onAfterRendering: function () {
-                                this.byId("Tree").expandToLevel(9999);
-                                this.byId("Tree").getItems()[3].setSelected(true);
+                            var that=this    
+                            that.byId("Tree").expandToLevel(9999);
+                                that.byId("Tree").getItems()[3].setSelected(true);
                             
                         },
                         onSelect: function (oEvent) {
