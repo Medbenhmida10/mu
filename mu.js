@@ -273,10 +273,7 @@
                                 this.byId("Tree").getItems()[3].setSelected(true);
                             },this);
                         },
-                        onAfterRendering: function () {
-
-                            
-                        },
+                    
                         onSelect: function (oEvent) {
                             var listselected = ''
                             for (var i = 0; i < this.getView().byId("Tree").getSelectedItems().length; i++) {
