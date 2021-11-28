@@ -261,7 +261,6 @@
                     var PageController = Controller.extend("myView.Template", {
                         
                         onInit: function () {
-                             var that=this
                             // set explored app's demo model on this sample
                             var oModel = new JSONModel(data);
 
@@ -269,8 +268,10 @@
 
                             // this.getView().setModel(oModel, that.widgetName);
                             sap.ui.getCore().setModel(oModel, that.widgetName);
-                                that.byId("Tree").expandToLevel(9999);
-                                that.byId("Tree").getItems()[3].setSelected(true);
+                            oModel.attachRequestCompleted(function(oEvent){
+                                this.byId("Tree").expandToLevel(9999);
+                                this.byId("Tree").getItems()[3].setSelected(true);
+                            },this);
                         },
                         onAfterRendering: function () {
 
