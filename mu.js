@@ -272,7 +272,7 @@
                                 // expand the tree
                                 this.byId("Tree").expandToLevel(9999);
                                 // select the node number 3
-                                this.byId("Tree").getItems()[3].setSelected(true);
+                                this.byId("Tree").getItems()[0].setSelected(true);
                             }, this);
                         },
                         
