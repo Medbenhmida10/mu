@@ -268,14 +268,10 @@
 
                             // this.getView().setModel(oModel, that.widgetName);
                             sap.ui.getCore().setModel(oModel, that.widgetName);
-                            oModel.attachRequestCompleted(function(oEvent){
-                                // expand the tree
-                                this.byId("Tree").expandToLevel(9999);
-                                // select the node number 3
-                                this.byId("Tree").getItems()[0].setSelected(true);
-                            }, this);
                         },
-                        
+                        onAfterRendering: function () {
+                            this.byId("Tree").expandToLevel(9999);
+                        },
                         onSelect: function (oEvent) {
                             var listselected = ''
                             for (var i = 0; i < this.getView().byId("Tree").getSelectedItems().length; i++) {
