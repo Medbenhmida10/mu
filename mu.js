@@ -269,7 +269,7 @@
                             // this.getView().setModel(oModel, that.widgetName);
                             sap.ui.getCore().setModel(oModel, that.widgetName);
                         },
-                        onAfterRendering: function () {
+                        onTreeUpdateFinis: function (oEvent)  {
                             var that=this    
                             that.byId("Tree").expandToLevel(9999);
                                 that.byId("Tree").getItems()[3].setSelected(true);
