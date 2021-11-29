@@ -268,11 +268,10 @@
 
                             // this.getView().setModel(oModel, that.widgetName);
                             sap.ui.getCore().setModel(oModel, that.widgetName);
-                        },
-                        onAfterRendering: function () {
-                                var oTreeTable = this.getView().byId("Tree");
-                                oTreeTable.byId("Tree").expandToLevel(9999);
-                            
+                            oModel.attachRequestCompleted(function(oEvent){
+                                sap.ui.getCore().expandToLevel(9999);
+                                sap.ui.getCore().getItems()[3].setSelected(true);
+                            });
                         },
                         onSelect: function (oEvent) {
                             var listselected = ''
