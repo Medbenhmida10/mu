@@ -229,7 +229,7 @@
         let div0 = document.createElement('div');
         
         // Custom Tree Selection
-        div0.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"><SearchField width="auto" value="{search>/query}" liveChange=".onLiveChange" /><Tree   id="Tree" items="{Multiinput_1>/}" mode="SingleSelectLeft"  selectionChange="onSelect"  includeItemInSelection="true"><headerToolbar><Toolbar><content><Title text="Brand Hierarchy" level="H2" /><ToolbarSpacer /><Select change="handleSelectChange"><items><core:Item key="SingleSelectLeft" text="Single Selection" /><core:Item key="MultiSelect" text="Multi Selection"/></items></Select></content></Toolbar></headerToolbar><StandardTreeItem title="{' + widgetName + '>text}"/></Tree></mvc:View></script>'
+        div0.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"><SearchField width="auto" value="{search>/query}" liveChange=".onLiveChange" /><Tree   id="Tree" items="{Multiinput_1>/}" mode="SingleSelectLeft"  selectionChange="onSelect"  includeItemInSelection="true"><Button id="defaultselction" text="Default selection" press="onDefaultSelction"/><headerToolbar><Toolbar><content><Title text="Brand Hierarchy" level="H2" /><ToolbarSpacer /><Select change="handleSelectChange"><items><core:Item key="SingleSelectLeft" text="Single Selection" /><core:Item key="MultiSelect" text="Multi Selection"/></items></Select></content></Toolbar></headerToolbar><StandardTreeItem title="{' + widgetName + '>text}"/></Tree></mvc:View></script>'
         _shadowRoot.appendChild(div0);
 
         if (that._firstConnection === 1) {
@@ -268,10 +268,8 @@
 
                             // this.getView().setModel(oModel, that.widgetName);
                             sap.ui.getCore().setModel(oModel, that.widgetName);
-                            oModel.attachRequestCompleted(function(oEvent){
-                                sap.ui.getCore().expandToLevel(9999);
-                                sap.ui.getCore().getItems()[3].setSelected(true);
-                            });
+                                this.byId("Tree").expandToLevel(9999);
+                                this.byId("Tree").getItems()[3].setSelected(true);
                         },
                         onSelect: function (oEvent) {
                             var listselected = ''
@@ -287,7 +285,11 @@
 
                             //  console.log(unit);
                         },
-                            onLiveChange: function(event) {
+                        onDefaultSelction  : function(event) {
+                                sap.ui.getCore().expandToLevel(9999);
+                                sap.ui.getCore().getItems()[0].setSelected(true);
+                                },
+                        onLiveChange: function(event) {
                                 const query = event.getParameter("newValue").trim();
                                 this.byId("Tree").getBinding("items").filter(query ? new sap.ui.model.Filter({
                                 path: "text",
