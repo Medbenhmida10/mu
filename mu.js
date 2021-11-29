@@ -268,6 +268,8 @@
 
                             // this.getView().setModel(oModel, that.widgetName);
                             sap.ui.getCore().setModel(oModel, that.widgetName);
+                            this.byId("Tree").expandToLevel(9999);
+                                this.byId("Tree").getItems()[0].setSelected(true);
                         },
                         onSelect: function (oEvent) {
                             var listselected = ''
@@ -284,8 +286,8 @@
                             //  console.log(unit);
                         },
                         onDefaultSelction  : function(event) {
-                                sap.ui.getCore().expandToLevel(9999);
-                                sap.ui.getCore().getItems()[0].setSelected(true);
+                                this.byId("Tree").expandToLevel(9999);
+                                this.byId("Tree").getItems()[0].setSelected(true);
                                 },
                         onLiveChange: function(event) {
                                 const query = event.getParameter("newValue").trim();
