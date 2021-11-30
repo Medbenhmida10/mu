@@ -229,13 +229,13 @@
         let div0 = document.createElement('div');
         
         // Custom Tree Selection
-        div0.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"><SearchField width="auto" value="{search>/query}" liveChange=".onLiveChange" /><Tree   id="Tree" items="{Multiinput_1>/}" mode="SingleSelectLeft" dataColumnsChanged="onDefault"  selectionChange="onSelect"  includeItemInSelection="true"><headerToolbar><Toolbar><content><Button id="defaultselction" text="Default selection" press="onDefaultSelction"/><Title text="Brand Hierarchy" level="H2" /><ToolbarSpacer /><Select change="handleSelectChange"><items><core:Item key="SingleSelectLeft" text="Single Selection" /><core:Item key="MultiSelect" text="Multi Selection"/></items></Select></content></Toolbar></headerToolbar><StandardTreeItem title="{' + widgetName + '>text}"/></Tree></mvc:View></script>'
+        div0.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"><SearchField width="auto" value="{search>/query}" liveChange=".onLiveChange" /><Tree   id="Tree" items="{Multiinput_1>/}" mode="SingleSelectLeft" selectionChange="onSelect"  includeItemInSelection="true"><headerToolbar><Toolbar><content><Button id="defaultselction" text="Default selection" press="onDefaultSelction"/><Title text="Brand Hierarchy" level="H2" /><ToolbarSpacer /><Select change="handleSelectChange"><items><core:Item key="SingleSelectLeft" text="Single Selection" /><core:Item key="MultiSelect" text="Multi Selection"/></items></Select></content></Toolbar></headerToolbar><StandardTreeItem title="{' + widgetName + '>text}"/></Tree></mvc:View></script>'
         _shadowRoot.appendChild(div0);
 
         if (that._firstConnection === 1) {
         } else {
             let div2 = document.createElement('div');
-            div2.innerHTML = '<div style="background-color : red !important; max-height: 580px; overflow-y: auto;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><slot name="content_' + widgetName + '"> </slot></div>';
+            div2.innerHTML = '<div style="background-color : white !important; max-height: 580px; overflow-y: auto;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><slot name="content_' + widgetName + '"> </slot></div>';
             _shadowRoot.appendChild(div2);
             that._firstConnection = 1;
         }
@@ -283,10 +283,6 @@
 
                             //  console.log(unit);
                         },
-                        onDefault : function(event) {
-                                this.byId("Tree").expandToLevel(9999);
-                                this.byId("Tree").getItems()[0].setSelected(true);
-                                },
                         onDefaultSelction  : function(event) {
                                 this.byId("Tree").expandToLevel(9999);
                                 this.byId("Tree").getItems()[0].setSelected(true);
