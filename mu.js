@@ -221,7 +221,7 @@
         if (that._firstConnection === 1) {
         } else {
             let div2 = document.createElement('div');
-            div2.innerHTML = '<div style="background-color : red !important; max-height: 580px; overflow-y: auto;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><slot name="content_' + widgetName + '"> </slot></div>';
+            div2.innerHTML = '<div style= color : red !important; max-height: 580px; overflow-y: auto;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><slot name="content_' + widgetName + '"> </slot></div>';
             _shadowRoot.appendChild(div2);
             that._firstConnection = 1;
         }
