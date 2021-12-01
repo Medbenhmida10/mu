@@ -254,8 +254,10 @@
                             console.log(oModel);
 
                             // this.getView().setModel(oModel, that.widgetName);
-                            sap.ui.getCore().setModel(oModel, "Multiinput_1");
+                            this.getView().setModel(oModel, "Multiinput_1");
                             oModel.attachRequestCompleted(function(oEvent){
+                                that.byId("Tree").expandToLevel(9999);
+                                that.byId("Tree").getItems()[3].setSelected(true);
                             });
                         },
                         onAfterRendering: function () {
@@ -266,8 +268,10 @@
                             console.log(oModel);
 
                             // this.getView().setModel(oModel, that.widgetName);
-                            sap.ui.getCore().setModel(oModel, "Multiinput_1");
+                            this.getView().setModel(oModel, "Multiinput_1");
                             oModel.attachRequestCompleted(function(oEvent){
+                                that.byId("Tree").expandToLevel(9999);
+                                that.byId("Tree").getItems()[3].setSelected(true);
                             });
                             
                         },
