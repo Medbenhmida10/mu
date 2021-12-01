@@ -256,10 +256,13 @@
                             // this.getView().setModel(oModel, that.widgetName);
                             sap.ui.getCore().setModel(oModel, "Multiinput_1");
                            // this.getView().byId("Tree").setModel(oModel, "Multiinput_1");
-                            if (this.getView().byId("Tree").getItems().length!=0){
-                                this.getView().byId("Tree").expandToLevel(9999);
-                                this.getView().byId("Tree").getItems()[3].setSelected(true);}
-                        },
+                            sap.ui.getCore().byId("__xmlview2--Tree").addEventDelegate({
+  onAfterRendering: function() {
+                                sap.ui.getCore().byId("__xmlview2--Tree").expandToLevel(9999);
+                               sap.ui.getCore().byId("__xmlview2--Tree").getItems()[3].setSelected(true);
+  }
+}, this);
+                   
             /*            onAfterRendering: function () {
  // set explored app's demo model on this sample
                             var that=this
