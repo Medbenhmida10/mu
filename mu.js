@@ -246,7 +246,7 @@
 
                     var PageController = Controller.extend("myView.Template", {
                         
-                        onInit: function () {
+                        onInit: function (evt) {
                             // set explored app's demo model on this sample
                             var that=this
                             var oModel = new JSONModel(data);
@@ -256,7 +256,7 @@
                             // this.getView().setModel(oModel, that.widgetName);
                             sap.ui.getCore().setModel(oModel, "Multiinput_1");
                            // this.getView().byId("Tree").setModel(oModel, "Multiinput_1");
-
+this.byId("Tree").expandToLevel(9999);
                         },
                    
                    onAfterRendering: function () {
