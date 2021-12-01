@@ -255,10 +255,10 @@
 
                             // this.getView().setModel(oModel, that.widgetName);
                             this.getView().setModel(oModel, "Multiinput_1");
-                            oModel.attachRequestCompleted(function(oEvent){
-                                that.byId("Tree").expandToLevel(9999);
-                                that.byId("Tree").getItems()[3].setSelected(true);
-                            });
+                            this.getView().byId("Tree").setModel(oModel, "Multiinput_1");
+                            if (this.getView().byId("Tree").getItems()!=undefined){
+                                this.getView().byId("Tree").expandToLevel(9999);
+                                this.getView().byId("Tree").getItems()[3].setSelected(true);}
                         },
                         onAfterRendering: function () {
  // set explored app's demo model on this sample
@@ -269,10 +269,10 @@
 
                             // this.getView().setModel(oModel, that.widgetName);
                             this.getView().setModel(oModel, "Multiinput_1");
-                            oModel.attachRequestCompleted(function(oEvent){
-                                that.byId("Tree").expandToLevel(9999);
-                                that.byId("Tree").getItems()[3].setSelected(true);
-                            });
+                            this.getView().byId("Tree").setModel(oModel, "Multiinput_1");
+                            if (this.getView().byId("Tree").getItems()!=undefined){
+                                this.getView().byId("Tree").expandToLevel(9999);
+                                this.getView().byId("Tree").getItems()[3].setSelected(true);}
                             
                         },
                         onDefaultSelction  : function(event) {
