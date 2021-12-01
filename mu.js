@@ -262,6 +262,7 @@
                                sap.ui.getCore().byId("__xmlview2--Tree").getItems()[3].setSelected(true);
   }
 }, this);
+                        },
                    
             /*            onAfterRendering: function () {
  // set explored app's demo model on this sample
