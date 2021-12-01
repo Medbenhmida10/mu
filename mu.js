@@ -260,12 +260,14 @@
                         },
                    
                    onAfterRendering: function () {
+                       if(sap.ui.getCore().byId("__xmlview2--Tree")!=undefined){
                             sap.ui.getCore().byId("__xmlview2--Tree").addEventDelegate({
   onAfterRendering: function() {
                                 sap.ui.getCore().byId("__xmlview2--Tree").expandToLevel(9999);
                                sap.ui.getCore().byId("__xmlview2--Tree").getItems()[3].setSelected(true);
   }
 }, this);
+                       }
                             
                         },
                         onDefaultSelction  : function(event) {
