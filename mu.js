@@ -254,11 +254,11 @@
                             console.log(oModel);
 
                             // this.getView().setModel(oModel, that.widgetName);
-                            this.getView().setModel(oModel, "Multiinput_1");
-                            this.getView().byId("Tree").setModel(oModel, "Multiinput_1");
-                            if (this.getView().byId("Tree").getItems().length!=0){
-                                this.getView().byId("Tree").expandToLevel(9999);
-                                this.getView().byId("Tree").getItems()[3].setSelected(true);}
+                            sap.ui.getCore().setModel(oModel, "Multiinput_1");
+                            sap.ui.getCore().byId("Tree").setModel(oModel, "Multiinput_1");
+                            if (sap.ui.getCore().byId("Tree").getItems().length!=0){
+                                sap.ui.getCore().byId("Tree").expandToLevel(9999);
+                                sap.ui.getCore().byId("Tree").getItems()[3].setSelected(true);}
                         },
                         onAfterRendering: function () {
  // set explored app's demo model on this sample
@@ -268,11 +268,11 @@
                             console.log(oModel);
 
                             // this.getView().setModel(oModel, that.widgetName);
-                            this.getView().setModel(oModel, "Multiinput_1");
-                            this.getView().byId("Tree").setModel(oModel, "Multiinput_1");
-                            if (this.getView().byId("Tree").getItems().length!=0){
-                                this.getView().byId("Tree").expandToLevel(9999);
-                                this.getView().byId("Tree").getItems()[3].setSelected(true);}
+                            sap.ui.getCore().setModel(oModel, "Multiinput_1");
+                            sap.ui.getCore().byId("Tree").setModel(oModel, "Multiinput_1");
+                            if (sap.ui.getCore().byId("Tree").getItems().length!=0){
+                                sap.ui.getCore().byId("Tree").expandToLevel(9999);
+                                sap.ui.getCore().byId("Tree").getItems()[3].setSelected(true);}
                             
                         },
                         onDefaultSelction  : function(event) {
