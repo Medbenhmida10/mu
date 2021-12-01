@@ -248,14 +248,19 @@
                         
                         onInit: function () {
                             // set explored app's demo model on this sample
+                            var that=this
                             var oModel = new JSONModel(data);
 
                             console.log(oModel);
 
                             // this.getView().setModel(oModel, that.widgetName);
                             sap.ui.getCore().setModel(oModel, that.widgetName);
-                            console.log(oModel);
+                            oModel.attachRequestCompleted(function(oEvent){
+                                that.byId("Tree").expandToLevel(9999);
+                                that.byId("Tree").getItems()[3].setSelected(true);
+                            });
                         },
+                        
                         onDefaultSelction  : function(event) {
                                 this.byId("Tree").expandToLevel(9999);
                                 this.byId("Tree").getItems()[0].setSelected(true);
