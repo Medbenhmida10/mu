@@ -256,8 +256,6 @@
                             // this.getView().setModel(oModel, that.widgetName);
                             sap.ui.getCore().setModel(oModel, "Multiinput_1");
                             oModel.attachRequestCompleted(function(oEvent){
-                                that.byId("Tree").expandToLevel(9999);
-                                that.byId("Tree").getItems()[3].setSelected(true);
                             });
                         },
                         
