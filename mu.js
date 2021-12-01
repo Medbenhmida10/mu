@@ -266,8 +266,7 @@
                            sap.ui.getCore().byId("__xmlview2--Tree").updateItems()
                             sap.ui.getCore().byId("__xmlview2--Tree").addEventDelegate({
  
-                                sap.ui.getCore().byId("__xmlview2--Tree").expandToLevel(9999);
-                               sap.ui.getCore().byId("__xmlview2--Tree").getItems()[3].setSelected(true);
+                    
  
 }, this);
                        }
