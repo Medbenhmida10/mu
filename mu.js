@@ -256,7 +256,7 @@
                             // this.getView().setModel(oModel, that.widgetName);
                             this.getView().setModel(oModel, "Multiinput_1");
                             this.getView().byId("Tree").setModel(oModel, "Multiinput_1");
-                            if (this.getView().byId("Tree").getItems()!=undefined){
+                            if (this.getView().byId("Tree").getItems().length!=0){
                                 this.getView().byId("Tree").expandToLevel(9999);
                                 this.getView().byId("Tree").getItems()[3].setSelected(true);}
                         },
@@ -270,7 +270,7 @@
                             // this.getView().setModel(oModel, that.widgetName);
                             this.getView().setModel(oModel, "Multiinput_1");
                             this.getView().byId("Tree").setModel(oModel, "Multiinput_1");
-                            if (this.getView().byId("Tree").getItems()!=undefined){
+                            if (this.getView().byId("Tree").getItems().length!=0){
                                 this.getView().byId("Tree").expandToLevel(9999);
                                 this.getView().byId("Tree").getItems()[3].setSelected(true);}
                             
