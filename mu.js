@@ -254,7 +254,7 @@
                             console.log(oModel);
 
                              this.getView().setModel(oModel, that.widgetName);
-                           oModel.attachRequestCompleted(function(oEvent){
+                           oModel.attachRequestCompleted(function(evt){
                                 that.byId("Tree").expandToLevel(9999);
                                 that.byId("Tree").getItems()[3].setSelected(true);
                             });
