@@ -246,7 +246,7 @@
 
                     var PageController = Controller.extend("myView.Template", {
                         
-                        onInit: function (evt) {
+                        onInit: function (event) {
                             // set explored app's demo model on this sample
                             var that=this
                             var oModel = new JSONModel(data);
