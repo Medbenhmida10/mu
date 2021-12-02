@@ -254,24 +254,12 @@
                             console.log(oModel);
 
                              this.getView().setModel(oModel, that.widgetName);
-                           // sap.ui.getCore().setModel(oModel, "Multiinput_1");
-                           // this.getView().byId("Tree").setModel(oModel, "Multiinput_1");
-this.byId("Tree").expandToLevel(9999);
+                           oModel.attachRequestCompleted(function(oEvent){
+                                that.byId("Tree").expandToLevel(9999);
+                                that.byId("Tree").getItems()[3].setSelected(true);
+                            });
                         },
                    
-                   onAfterRendering: function (evt) {
-                       if(sap.ui.getCore().byId("__xmlview2--Tree")!=undefined){
-                                                           sap.ui.getCore().byId("__xmlview2--Tree").expandToLevel(9999);
-                               sap.ui.getCore().byId("__xmlview2--Tree").getItems()[3].setSelected(true);
-                           sap.ui.getCore().byId("__xmlview2--Tree").updateItems()
-                            sap.ui.getCore().byId("__xmlview2--Tree").addEventDelegate({
- 
-                    
- 
-}, this);
-                       }
-                            
-                        },
                         onDefaultSelction  : function(event) {
                                 this.byId("Tree").expandToLevel(9999);
                                 this.byId("Tree").getItems()[0].setSelected(true);
