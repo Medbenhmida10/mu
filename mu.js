@@ -254,10 +254,9 @@
                             console.log(oModel);
 
                              this.getView().setModel(oModel, that.widgetName);
-                           oModel.attachRequestCompleted(function(evt){
+                            sap.ui.getCore().setModel(oModel, that.widgetName);
                                 that.byId("Tree").expandToLevel(9999);
-                                that.byId("Tree").getItems()[3].setSelected(true);
-                            });
+                            
                         },
                    
                         onDefaultSelction  : function(event) {
