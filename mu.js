@@ -215,7 +215,7 @@
         let div0 = document.createElement('div');
         
         // Custom Tree Selection
-        div0.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"><SearchField width="auto" value="{search>/query}" liveChange=".onLiveChange" /><Tree   id="Tree" items="{Multiinput_1>/}" mode="SingleSelectLeft" selectionChange="onSelect"  includeItemInSelection="true"><headerToolbar><Toolbar><content><Button id="defaultselction" text="Default selection" press="onDefaultSelction"/><Title text="Brand Hierarchy" level="H2" /><ToolbarSpacer /><Select change="handleSelectChange"><items><core:Item key="SingleSelectLeft" text="Single Selection" /><core:Item key="MultiSelect" text="Multi Selection"/></items></Select></content></Toolbar></headerToolbar><StandardTreeItem title="{' + widgetName + '>text}"/></Tree></mvc:View></script>'
+        div0.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"><SearchField width="auto" value="{search>/query}" liveChange=".onLiveChange" /><Tree   id="Tree" items="{Multiinput_1>/}" mode="SingleSelectLeft" updateFinished="onDefaultSelction" selectionChange="onSelect"  includeItemInSelection="true"><headerToolbar><Toolbar><content><Button id="defaultselction" text="Default selection" press="onDefaultSelction"/><Title text="Brand Hierarchy" level="H2" /><ToolbarSpacer /><Select change="handleSelectChange"><items><core:Item key="SingleSelectLeft" text="Single Selection" /><core:Item key="MultiSelect" text="Multi Selection"/></items></Select></content></Toolbar></headerToolbar><StandardTreeItem title="{' + widgetName + '>text}"/></Tree></mvc:View></script>'
         _shadowRoot.appendChild(div0);
 
         if (that._firstConnection === 1) {
@@ -246,16 +246,13 @@
 
                     var PageController = Controller.extend("myView.Template", {
                         
-                        onInit: function (event) {
+                        onInit: function () {
                             // set explored app's demo model on this sample
                             var that=this
                             var oModel = new JSONModel(data);
 
                             console.log(oModel);
-
-                             this.getView().setModel(oModel, that.widgetName);
                             sap.ui.getCore().setModel(oModel, that.widgetName);
-                                that.byId("Tree").expandToLevel(9999);
                             
                         },
                    
