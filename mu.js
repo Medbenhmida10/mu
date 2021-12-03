@@ -102,107 +102,121 @@
 
 
     function loadthis(that, changedProperties) {
+
         var that_ = that;
-        console.log("First: "+that._firstConnection);
-        
         widgetName = changedProperties.widgetName;
+
+ /*--------------------------------------------------------------------------------------------------------------- */
+ /*--------------------------Start: Data from SAC and prepare for JSON Model ------------------------------------- */ 
+ /*--------------------------------------------------------------------------------------------------------------- */
+
         var rowData = changedProperties.footer;
-        console.log("a: " + rowData[0]);
 
         var data = [];
 
-        if(rowData.length>0){
+        if (rowData.length > 0) {
 
-        for(var a = 0; a < rowData[0].length; a++){
-    
-            var node0 = {text: rowData[0][a].Description_a5y1o06718.id};
-            var id0 = rowData[0][a].NODEID.id;
-            node0.nodes =[];
-    
-            for(var b = 0; b < rowData[1].length; b++){
-    
-                if(rowData[1][b].PARENTID.id === id0){
-    
-                    var node1 ={text: rowData[1][b].Description_a5y1o06718.id};
-                    var id1 = rowData[1][b].NODEID.id;
-                    node1.nodes =[];
-    
-                    for(var c = 0; c < rowData[2].length; c++){
-    
-                        if(rowData[2][c].PARENTID.id === id1){
-    
-                            var node2 ={text: rowData[2][c].Description_a5y1o06718.id};
-                            var id2 = rowData[2][c].NODEID.id;
-                            node2.nodes = [];
-    
-                            for(var d = 0; d < rowData[3].length; d++){
-    
-                                if(rowData[3][d].PARENTID.id === id2){
-    
-                                    var node3 ={text: rowData[3][d].Description_a5y1o06718.id};
-                                    var id3 = rowData[3][d].NODEID.id;
-                                    node3.nodes = [];
+            for (var a = 0; a < rowData[0].length; a++) {
 
-                                    for(var e = 0; e < rowData[4].length; e++){
+                var node0 = { text: rowData[0][a].Description_a5y1o06718.id };
+                var id0 = rowData[0][a].NODEID.id;
+                node0.nodes = [];
 
-                                        if(rowData[4][e].PARENTID.id === id3){
+                for (var b = 0; b < rowData[1].length; b++) {
 
-                                            var node4 ={text: rowData[4][e].Description_a5y1o06718.id};
-                                            var id4 = rowData[4][e].NODEID.id;
-                                            node4.nodes = []; 
+                    if (rowData[1][b].PARENTID.id === id0) {
 
-                                            for(var f = 0; f < rowData[5].length; f++){
+                        var node1 = { text: rowData[1][b].Description_a5y1o06718.id };
+                        var id1 = rowData[1][b].NODEID.id;
+                        node1.nodes = [];
 
-                                                if(rowData[5][f].PARENTID.id === id4){
+                        for (var c = 0; c < rowData[2].length; c++) {
 
-                                                    var node5 ={text: rowData[5][f].Description_a5y1o06718.id};
-                                                    var id5 = rowData[5][f].NODEID.id;
-                                                    node5.nodes = [];
+                            if (rowData[2][c].PARENTID.id === id1) {
 
-                                                    for(var g = 0; g < rowData[6].length; g++){
+                                var node2 = { text: rowData[2][c].Description_a5y1o06718.id };
+                                var id2 = rowData[2][c].NODEID.id;
+                                node2.nodes = [];
 
-                                                        if(rowData[6][g].PARENTID.id === id5){
+                                for (var d = 0; d < rowData[3].length; d++) {
 
-                                                            var node6 ={text: rowData[6][g].Description_a5y1o06718.id};
-                                                            var id6 = rowData[6][g].NODEID.id;
-                                                            node6.nodes = [];
+                                    if (rowData[3][d].PARENTID.id === id2) {
 
-                                                            
+                                        var node3 = { text: rowData[3][d].Description_a5y1o06718.id };
+                                        var id3 = rowData[3][d].NODEID.id;
+                                        node3.nodes = [];
 
-                                                            node5.nodes.push(node6);
+                                        for (var e = 0; e < rowData[4].length; e++) {
+
+                                            if (rowData[4][e].PARENTID.id === id3) {
+
+                                                var node4 = { text: rowData[4][e].Description_a5y1o06718.id };
+                                                var id4 = rowData[4][e].NODEID.id;
+                                                node4.nodes = [];
+
+                                                for (var f = 0; f < rowData[5].length; f++) {
+
+                                                    if (rowData[5][f].PARENTID.id === id4) {
+
+                                                        var node5 = { text: rowData[5][f].Description_a5y1o06718.id };
+                                                        var id5 = rowData[5][f].NODEID.id;
+                                                        node5.nodes = [];
+
+                                                        for (var g = 0; g < rowData[6].length; g++) {
+
+                                                            if (rowData[6][g].PARENTID.id === id5) {
+
+                                                                var node6 = { text: rowData[6][g].Description_a5y1o06718.id };
+                                                                var id6 = rowData[6][g].NODEID.id;
+                                                                node6.nodes = [];
+
+                                                                for (var h = 0; h < rowData[7].length; h++) {
+
+                                                                    if (rowData[7][h].PARENTID.id === id6) {
+
+                                                                        var node7 = { text: rowData[7][h].Description_a5y1o06718.id };
+                                                                        var id7 = rowData[7][h].NODEID.id;
+                                                                        node7.nodes = [];
+
+                                                                        node6.nodes.push(node7);
+
+                                                                    }
+                                                                }
+
+                                                                node5.nodes.push(node6);
 
 
+                                                            }
                                                         }
+
+                                                        node4.nodes.push(node5);
                                                     }
-                                                    
-                                                    node4.nodes.push(node5);
                                                 }
+
+                                                node3.nodes.push(node4);
+
                                             }
-
-                                            node3.nodes.push(node4);
-
                                         }
+
+                                        node2.nodes.push(node3);
+
                                     }
-    
-                                    node2.nodes.push(node3);
-    
                                 }
+
+                                node1.nodes.push(node2);
                             }
-    
-                            node1.nodes.push(node2);
                         }
+
+                        node0.nodes.push(node1);
                     }
-    
-                  node0.nodes.push(node1);
                 }
+
+                data.push(node0);
+
             }
-    
-            data.push(node0);
-    
+            console.log(data);
         }
-        console.log(data);
-        }
-        
+
  /*--------------------------------------------------------------------------------------------------------------- */
  /*--------------------------End: Data from SAC and prepare for JSON Model ------------------------------------- */ 
  /*--------------------------------------------------------------------------------------------------------------- */
@@ -221,7 +235,7 @@
         if (that._firstConnection === 1) {
         } else {
             let div2 = document.createElement('div');
-            div2.innerHTML = '<div style= "color: red !important; max-height: 580px; overflow-y: auto;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><slot name="content_' + widgetName + '"> </slot></div>';
+            div2.innerHTML = '<div style="max-height: 580px; overflow-y: auto;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><slot name="content_' + widgetName + '"> </slot></div>';
             _shadowRoot.appendChild(div2);
             that._firstConnection = 1;
         }
@@ -246,21 +260,15 @@
 
                     var PageController = Controller.extend("myView.Template", {
                         
-                        onInit: function (evt) {
+                        onInit: function () {
                             // set explored app's demo model on this sample
-                            var that=this
                             var oModel = new JSONModel(data);
 
                             console.log(oModel);
 
-                             this.getView().setModel(oModel, that.widgetName);
-                           // sap.ui.getCore().setModel(oModel, "Multiinput_1");
-                           this.getView().byId("Tree").setModel(oModel, "Multiinput_1");
+                            // this.getView().setModel(oModel, that.widgetName);
+                            sap.ui.getCore().setModel(oModel, that.widgetName);
                         },
-                        onDefaultSelction  : function(event) {
-                                this.byId("Tree").expandToLevel(9999);
-                                this.byId("Tree").getItems()[0].setSelected(true);
-                                },
                         onSelect: function (oEvent) {
                             var listselected = ''
                             for (var i = 0; i < this.getView().byId("Tree").getSelectedItems().length; i++) {
@@ -275,6 +283,10 @@
 
                             //  console.log(unit);
                         },
+                        onDefaultSelction  : function(event) {
+                                this.byId("Tree").expandToLevel(9999);
+                                this.byId("Tree").getItems()[0].setSelected(true);
+                                },
                         onLiveChange: function(event) {
                                 const query = event.getParameter("newValue").trim();
                                 this.byId("Tree").getBinding("items").filter(query ? new sap.ui.model.Filter({
