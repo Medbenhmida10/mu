@@ -169,20 +169,7 @@
                                                                 var node6 = { text: rowData[6][g].Description_a5y1o06718.id };
                                                                 var id6 = rowData[6][g].NODEID.id;
                                                                 node6.nodes = [];
-
-                                                                for (var h = 0; h < rowData[7].length; h++) {
-
-                                                                    if (rowData[7][h].PARENTID.id === id6) {
-
-                                                                        var node7 = { text: rowData[7][h].Description_a5y1o06718.id };
-                                                                        var id7 = rowData[7][h].NODEID.id;
-                                                                        node7.nodes = [];
-
-                                                                        node6.nodes.push(node7);
-
-                                                                    }
-                                                                }
-
+                                                                
                                                                 node5.nodes.push(node6);
 
 
