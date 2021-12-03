@@ -256,7 +256,7 @@
                             
                         },
                    
-                        onDefaultSelction  : function(event) {
+                        onDefaultSelction  : function(oEvent) {
                                 this.byId("Tree").expandToLevel(9999);
                                 this.byId("Tree").getItems()[0].setSelected(true);
                                 },
