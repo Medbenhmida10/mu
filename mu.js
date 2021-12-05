@@ -267,10 +267,12 @@
 
                         onDefaultSelction  : function(event) {
                             if(time){
-                            this.byId("Tree").expandToLevel(9999);
-                            this.byId("Tree").getItems()[0].setSelected(true);
-                            console.log(this.byId("Tree").getItems()[1]);
-                            time = 0;  
+                                if(this.byId("Tree")!=undefined){
+                                    this.byId("Tree").expandToLevel(9999);
+                                    this.byId("Tree").getItems()[0].setSelected(true);
+                                    console.log(this.byId("Tree").getItems()[1]);
+                                    time = 0;  
+                                }
                         
                         }
 
