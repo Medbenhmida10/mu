@@ -291,10 +291,6 @@
 
                             //  console.log(unit);
                         },
-                        onDefaultSelction  : function(event) {
-                                this.byId("Tree").expandToLevel(9999);
-                                this.byId("Tree").getItems()[0].setSelected(true);
-                                },
                         onLiveChange: function(event) {
                                 const query = event.getParameter("newValue").trim();
                                 this.byId("Tree").getBinding("items").filter(query ? new sap.ui.model.Filter({
