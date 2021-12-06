@@ -267,14 +267,13 @@
 
 
                         onDefaultSelction  : function(event) {
-                            if(time){
-                                if(this.byId("Tree")!=undefined){
+                            if(this.byId("Tree")!=undefined){
                                     this.byId("Tree").expandToLevel(9999);
                                     this.byId("Tree").getItems()[0].setSelected(true);
-                                    time = 0;  
+                                    
                                 }
                         
-                        }
+                        
 
                         },
                         onSelect: function (oEvent) {
