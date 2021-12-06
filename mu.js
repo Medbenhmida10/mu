@@ -270,9 +270,8 @@
                             if(time){
                                 if(this.byId("Tree")!=undefined){
                                     this.byId("Tree").expandToLevel(9999);
-                                    if(this.byId("Tree").getItems().[0]!=undefined){
-                                        this.byId("Tree").getItems()[0].setSelected(true);
-                                    }
+                                    this.byId("Tree").getItems()[0].setSelected(true);
+                                    console.log(this.byId("Tree").getItems()[1]);
                                     time = 0;  
                                 }
                         
