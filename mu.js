@@ -267,13 +267,15 @@
 
 
                         onDefaultSelction  : function(event) {
-                            if(this.byId("Tree")!=undefined){
+                            if(time){
+                                if(this.byId("Tree")!=undefined){
                                     this.byId("Tree").expandToLevel(9999);
-                                    this.byId("Tree").getItems()[0].setSelected(true);
-                                    
+                                    if(this.byId("Tree").getItems()[0]!=undefined){
+                                        this.byId("Tree").getItems()[0].setSelected(true);
+                                    }
                                 }
-                        
-                        
+                            time = 0; 
+                        }
 
                         },
                         onSelect: function (oEvent) {
