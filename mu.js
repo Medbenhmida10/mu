@@ -248,7 +248,7 @@
                     "use strict";
                
                     var PageController = Controller.extend("myView.Template", {
-                        onInit: function (event) {
+                        onInit: function (evt) {
 
                             var oModel = new JSONModel(data);
                             this.getView().byId("Tree").removeSelections(true);
