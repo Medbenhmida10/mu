@@ -248,11 +248,11 @@
                     "use strict";
                
                     var PageController = Controller.extend("myView.Template", {
-                        onInit: function (oEvent) {
+                        onInit: function (event) {
 
                             var oModel = new JSONModel(data);
-                            this.getView().byId("Tree").removeSelections(true);
-                            this.getView().setModel(oModel, that.widgetName);
+                            sap.ui.getCore().byId("Tree").removeSelections(true);
+                            sap.ui.getCore().setModel(oModel, that.widgetName);
                             
                         },
 
