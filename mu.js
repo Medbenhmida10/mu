@@ -266,20 +266,7 @@
                             },
 
 
-                        onSelect: function (oEvent) {
-                            var listselected = ''
-                            for (var i = 0; i < this.getView().byId("Tree").getSelectedItems().length; i++) {
-                                listselected += this.getView().byId("Tree").getSelectedItems()[i].getBindingContext("Multiinput_1").getObject().text + ","
-                            }
-
-                            console.log(listselected);
-                            _unit = listselected;
-                            // new sap.m.MessageToast.show(_unit)
-                            that._firePropertiesChanged();
-
-
-                            //  console.log(unit);
-                        },
+                        
 
                         handleSelectChange: function (oEvent) {
                             var mode = oEvent.getParameter("selectedItem").getKey();
