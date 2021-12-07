@@ -272,9 +272,9 @@
                                     this.byId("Tree").expandToLevel(9999);
                                     if(this.byId("Tree").getItems()[0]!=undefined){
                                         this.byId("Tree").getItems()[0].setSelected(true);
+                                        time = 0; 
                                     }
                                 }
-                            time = 0; 
                         }
 
                         },
