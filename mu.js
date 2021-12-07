@@ -251,6 +251,7 @@
                         onInit: function (event) {
 
                             var oModel = new JSONModel(data);
+                            this.getView().byId("Tree").removeSelections(true);
                             sap.ui.getCore().setModel(oModel, that.widgetName);
                             
                         },
