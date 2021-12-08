@@ -249,8 +249,8 @@
                
                     var PageController = Controller.extend("myView.Template", {
                         onInit: function (event) {
-                            if(sap.ui.getCore().byId("__xmlview2--Tree")!=undefined){
-                                sap.ui.getCore().byId("__xmlview2--Tree").destroy()
+                            if(sap.ui.getCore().byId("__xmlview1--Tree")!=undefined){
+                                sap.ui.getCore().byId("__xmlview1--Tree").destroy()
                             }
                             var oModel = new JSONModel(data);
                             sap.ui.getCore().setModel(oModel, that.widgetName);
