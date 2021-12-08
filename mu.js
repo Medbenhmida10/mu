@@ -263,16 +263,7 @@
                             value1: query,
                             }) : null);
                             this.byId("Tree").expandToLevel(9999);
-                            },
-
-
-                        
-
-                        handleSelectChange: function (oEvent) {
-                            var mode = oEvent.getParameter("selectedItem").getKey();
-                            this.byId("Tree").setMode(mode);
-                            console.log(mode);
-                        }
+                            }
 
                     });
 
