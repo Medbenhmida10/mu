@@ -217,7 +217,7 @@
         let div0 = document.createElement('div');
 
         // Custom Tree Selection
-        div0.innerHTML = '<script  id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"> <SearchField width="auto"  value="{search>/query}" liveChange=".onLiveChange" /> <Tree   id="Tree" items="{' + widgetName + '>/}" mode="MultiSelect" rememberSelections="false" selectionChange="onSelect"  includeItemInSelection="true"><StandardTreeItem title="{' + widgetName + '>text}"/></Tree></mvc:View></script>'
+        div0.innerHTML = '<script  id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"> <SearchField width="auto"  value="{search>/query}" liveChange=".onLiveChange" /> <Tree   id="Tree" items="{' + widgetName + '>/}" mode="MultiSelect" selectionChange="onSelect"><StandardTreeItem title="{' + widgetName + '>text}"/></Tree></mvc:View></script>'
         _shadowRoot.appendChild(div0);
 
         if (that._firstConnection === 1) {
