@@ -217,7 +217,7 @@
         let div0 = document.createElement('div');
 
         // Custom Tree Selection
-        div0.innerHTML = '<script  id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"> <SearchField width="auto"  value="{search>/query}" liveChange=".onLiveChange" /> <Tree  id="Tree" items="{' + widgetName + '>/}" mode="MultiSelect" selectionChange="onSelect"><StandardTreeItem title="{' + widgetName + '>text}"/></Tree></mvc:View></script>'
+        div0.innerHTML = '<script  id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"> <SearchField width="auto"  value="{search>/query}" liveChange=".onLiveChange" /> <Tree   id="Tree" items="{' + widgetName + '>/}" mode="MultiSelect"  selectionChange="onSelect"  includeItemInSelection="true" updateFinished="onDefaultSelction" ><StandardTreeItem title="{' + widgetName + '>text}" selected="{selected}"/></Tree></mvc:View></script>'
         _shadowRoot.appendChild(div0);
 
         if (that._firstConnection === 1) {
@@ -250,7 +250,7 @@
                     var PageController = Controller.extend("myView.Template", {
                         onInit: function (event) {
                             if(sap.ui.getCore().byId("__xmlview1--Tree").getSelectedItems().length>0){
-                            sap.ui.getCore().byId("__xmlview1--Tree").removeSelections();
+                                sap.ui.getCore().byId("__xmlview1--Tree").removeSelections();
                             }
                             var oModel = new JSONModel(data);
                             sap.ui.getCore().setModel(oModel, that.widgetName);
@@ -265,7 +265,50 @@
                             value1: query,
                             }) : null);
                             this.byId("Tree").expandToLevel(9999);
+                            },
+
+
+                        onDefaultSelction  : function(event) {
+                            if(time){
+                                if(this.byId("Tree")!=undefined){
+                                    this.byId("Tree").expandToLevel(9999);
+                                    if(this.byId("Tree").getItems()[0]!=undefined){
+                                        this.byId("Tree").getItems()[0].setSelected(true);
+                                        time = 0; 
+                                    }
+                                }
+                        }
+
+                        },
+                        onSelect: function (oEvent) {
+                            var listselected = ''
+                            for (var i = 0; i < this.getView().byId("Tree").getSelectedItems().length; i++) {
+                                listselected += this.getView().byId("Tree").getSelectedItems()[i].getBindingContext("Multiinput_1").getObject().text + ","
                             }
+
+                            console.log(listselected);
+                            _unit = listselected;
+                            // new sap.m.MessageToast.show(_unit)
+                            that._firePropertiesChanged();
+
+
+                            //  console.log(unit);
+                        },
+                        onLiveChange: function(event) {
+                                const query = event.getParameter("newValue").trim();
+                                this.byId("Tree").getBinding("items").filter(query ? new sap.ui.model.Filter({
+                                path: "text",
+                                operator: "Contains",
+                                value1: query,
+                                }) : null);
+                                this.byId("Tree").expandToLevel(9999);
+                                },
+
+                        handleSelectChange: function (oEvent) {
+                            var mode = oEvent.getParameter("selectedItem").getKey();
+                            this.byId("Tree").setMode(mode);
+                            console.log(mode);
+                        }
 
                     });
 
@@ -283,6 +326,7 @@
             var oView = sap.ui.xmlview({
                 viewContent: jQuery(divfinal).html(),
             });
+
             oView.placeAt(div);
         });
     }
