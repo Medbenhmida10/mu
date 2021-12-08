@@ -250,7 +250,7 @@
                     var PageController = Controller.extend("myView.Template", {
                         onInit: function (event) {
                             if(sap.ui.getCore().byId("__xmlview1--Tree").getSelectedItems().length>0){
-                            sap.ui.getCore().byId("__xmlview1--Tree").destory();
+                            sap.ui.getCore().byId("__xmlview1--Tree").destroy();
                             }
                             var oModel = new JSONModel(data);
                             sap.ui.getCore().setModel(oModel, that.widgetName);
