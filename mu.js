@@ -251,9 +251,6 @@
                         onInit: function (event) {
 
                             var oModel = new JSONModel(data);
-                            if(sap.ui.getCore().byId("__xmlview2--Tree")!=undefined){
-                            sap.ui.getCore().byId("__xmlview2--Tree").removeSelections(true);
-                            }
                             sap.ui.getCore().setModel(oModel, that.widgetName);
                             
                         },
