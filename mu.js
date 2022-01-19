@@ -286,7 +286,7 @@ toggleOpenState: function(oEvent) {
                                 }
                                 
                         }
-$('.sapMTreeItemBaseChildren').css('background-color', 'white');
+$('.sapMTreeItemBaseChildren').css('background-color', 'red');
                         },
                         onSelect: function (oEvent) {
                             var listselected = ''
