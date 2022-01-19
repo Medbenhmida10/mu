@@ -254,8 +254,7 @@
                             }
                             var oModel = new JSONModel(data);
                             sap.ui.getCore().setModel(oModel, that.widgetName);
-                            $("li").removeClass("sapMTreeItemBaseChildren");
-                            $("li").css("background-color", "white");
+                            $('.sapMTreeItemBaseChildren').css('background-color', 'white');
                             
                         },
 
@@ -267,8 +266,7 @@
                             value1: query,
                             }) : null);
                             this.byId("Tree").expandToLevel(9999);
-                            $("li").removeClass("sapMTreeItemBaseChildren");
-                            $("li").css("background-color", "white");
+                            $('.sapMTreeItemBaseChildren').css('background-color', 'white');
                             },
 
 
@@ -276,13 +274,13 @@
                             if(time){
                                 if(this.byId("Tree")!=undefined){
                                     this.byId("Tree").expandToLevel(9999);
-                                    $("li").removeClass("sapMTreeItemBaseChildren");
+                                    
                                     if(this.byId("Tree").getItems()[0]!=undefined){
                                         this.byId("Tree").getItems()[0].setSelected(true);
                                         time = 0; 
                                     }
                                 }
-                                $("li").css("background-color", "white");
+                                $('.sapMTreeItemBaseChildren').css('background-color', 'white');
                         }
 
                         },
@@ -291,16 +289,12 @@
                             for (var i = 0; i < this.getView().byId("Tree").getSelectedItems().length; i++) {
                                 listselected += this.getView().byId("Tree").getSelectedItems()[i].getBindingContext("Multiinput_1").getObject().text + ","
                             }
-this.byId("Tree").getItems()[2].toggleStyleClass("sapMTreeItemBaseChildren")
-                            this.byId("Tree").getItems()[2].removeStyleClass("sapMTreeItemBaseChildren")
-                            this.byId("Tree").getItems()[5].toggleStyleClass("sapMTreeItemBaseChildren")
-                            this.byId("Tree").getItems()[5].removeStyleClass("sapMTreeItemBaseChildren")
+$('.sapMTreeItemBaseChildren').css('background-color', 'white');
                             console.log(listselected);
                             _unit = listselected;
                             // new sap.m.MessageToast.show(_unit)
                             that._firePropertiesChanged();
 
-$("li").css("background-color", "white");
                             //  console.log(unit);
                         },
 
@@ -308,7 +302,7 @@ $("li").css("background-color", "white");
                             var mode = oEvent.getParameter("selectedItem").getKey();
                             this.byId("Tree").setMode(mode);
                             console.log(mode);
-                            $("li").css("background-color", "white");
+                            $('.sapMTreeItemBaseChildren').css('background-color', 'white');
                         }
 
                     });
