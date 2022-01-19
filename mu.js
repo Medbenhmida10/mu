@@ -255,6 +255,7 @@
                             var oModel = new JSONModel(data);
                             sap.ui.getCore().setModel(oModel, that.widgetName);
                             $("li").removeClass("sapMTreeItemBaseChildren");
+                            $("li").css("background-color", "white");
                             
                         },
 
@@ -267,6 +268,7 @@
                             }) : null);
                             this.byId("Tree").expandToLevel(9999);
                             $("li").removeClass("sapMTreeItemBaseChildren");
+                            $("li").css("background-color", "white");
                             },
 
 
@@ -280,6 +282,7 @@
                                         time = 0; 
                                     }
                                 }
+                                $("li").css("background-color", "white");
                         }
 
                         },
@@ -297,7 +300,7 @@ this.byId("Tree").getItems()[2].toggleStyleClass("sapMTreeItemBaseChildren")
                             // new sap.m.MessageToast.show(_unit)
                             that._firePropertiesChanged();
 
-
+$("li").css("background-color", "white");
                             //  console.log(unit);
                         },
 
@@ -306,7 +309,7 @@ this.byId("Tree").getItems()[2].toggleStyleClass("sapMTreeItemBaseChildren")
                             this.byId("Tree").setMode(mode);
                             console.log(mode);
                         }
-
+$("li").css("background-color", "white");
                     });
 
                     return PageController;
@@ -318,7 +321,7 @@ this.byId("Tree").getItems()[2].toggleStyleClass("sapMTreeItemBaseChildren")
             console.log("[FOUND INDEX]", foundIndex, Ar[foundIndex]);
             var divfinal = Ar[foundIndex].div;
             console.log(divfinal);
-
+$("li").css("background-color", "white");
             //### THE APP: place the XMLView somewhere into DOM ###
             var oView = sap.ui.xmlview({
                 viewContent: jQuery(divfinal).html(),
