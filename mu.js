@@ -321,7 +321,6 @@ $("li").css("background-color", "white");
             console.log("[FOUND INDEX]", foundIndex, Ar[foundIndex]);
             var divfinal = Ar[foundIndex].div;
             console.log(divfinal);
-$("li").css("background-color", "white");
             //### THE APP: place the XMLView somewhere into DOM ###
             var oView = sap.ui.xmlview({
                 viewContent: jQuery(divfinal).html(),
