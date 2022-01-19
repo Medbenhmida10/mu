@@ -288,7 +288,10 @@
                             for (var i = 0; i < this.getView().byId("Tree").getSelectedItems().length; i++) {
                                 listselected += this.getView().byId("Tree").getSelectedItems()[i].getBindingContext("Multiinput_1").getObject().text + ","
                             }
-
+this.byId("Tree").getItems()[2].toggleStyleClass("sapMTreeItemBaseChildren")
+                            this.byId("Tree").getItems()[2].removeStyleClass("sapMTreeItemBaseChildren")
+                            this.byId("Tree").getItems()[5].toggleStyleClass("sapMTreeItemBaseChildren")
+                            this.byId("Tree").getItems()[5].removeStyleClass("sapMTreeItemBaseChildren")
                             console.log(listselected);
                             _unit = listselected;
                             // new sap.m.MessageToast.show(_unit)
