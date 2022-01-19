@@ -308,8 +308,9 @@ $("li").css("background-color", "white");
                             var mode = oEvent.getParameter("selectedItem").getKey();
                             this.byId("Tree").setMode(mode);
                             console.log(mode);
+                            $("li").css("background-color", "white");
                         }
-$("li").css("background-color", "white");
+
                     });
 
                     return PageController;
