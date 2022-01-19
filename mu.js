@@ -217,7 +217,7 @@
         let div0 = document.createElement('div');
 
         // Custom Tree Selection
-        div0.innerHTML = '<style>.host {background-color: green !important;}</style> <script  id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"> <SearchField width="auto"  value="{search>/query}" liveChange=".onLiveChange" /> <Tree   id="Tree" items="{' + widgetName + '>/}" mode="MultiSelect"  selectionChange="onSelect"  includeItemInSelection="true" updateFinished="onDefaultSelction" ><StandardTreeItem title="{' + widgetName + '>text}" selected="{selected}"/></Tree></mvc:View></script>'
+        div0.innerHTML = '<script  id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"> <SearchField width="auto"  value="{search>/query}" liveChange=".onLiveChange" /> <Tree   id="Tree" items="{' + widgetName + '>/}" mode="MultiSelect"  selectionChange="onSelect"  includeItemInSelection="true" updateFinished="onDefaultSelction" ><StandardTreeItem title="{' + widgetName + '>text}" selected="{selected}"/></Tree></mvc:View></script>'
         _shadowRoot.appendChild(div0);
 
         if (that._firstConnection === 1) {
@@ -272,6 +272,7 @@
                             if(time){
                                 if(this.byId("Tree")!=undefined){
                                     this.byId("Tree").expandToLevel(9999);
+                                    $("li").removeClass("sapMTreeItemBaseChildren");
                                     if(this.byId("Tree").getItems()[0]!=undefined){
                                         this.byId("Tree").getItems()[0].setSelected(true);
                                         time = 0; 
