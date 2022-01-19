@@ -254,6 +254,7 @@
                             }
                             var oModel = new JSONModel(data);
                             sap.ui.getCore().setModel(oModel, that.widgetName);
+                            $("li").removeClass("sapMTreeItemBaseChildren");
                             
                         },
 
