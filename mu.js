@@ -262,8 +262,8 @@ toggleOpenState: function(oEvent) {
     $('li').css('background-color', 'white');
 },
 
-                        onLiveChange: function(event) {
-                            const query = event.getParameter("newValue").trim();
+                        onLiveChange: function(oEvent) {
+                            const query = oEvent.getParameter("newValue").trim();
                             this.byId("Tree").getBinding("items").filter(query ? new sap.ui.model.Filter({
                             path: "text",
                             operator: "Contains",
