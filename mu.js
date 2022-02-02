@@ -286,7 +286,13 @@ toggleOpenState: function(oEvent) {
                                 }
                                 
                         }
-$('.sapMTreeItemBaseChildren').css('background-color', 'red');
+$('.sapMTreeItemBaseChildren').css('background-color', 'white');
+                            sap.ui.getCore().byId(this.byId("Tree").getItems()[5].$().find('.sapMCb').attr('id')).setEnabled(false);
+                            this.byId("Tree").getItems()[5].$().css('color', 'lightgrey');
+                            sap.ui.getCore().byId(this.byId("Tree").getItems()[6].$().find('.sapMCb').attr('id')).setEnabled(false);
+                            this.byId("Tree").getItems()[6].$().css('color', 'lightgrey');
+                            sap.ui.getCore().byId(this.byId("Tree").getItems()[7].$().find('.sapMCb').attr('id')).setEnabled(false);
+                            this.byId("Tree").getItems()[7].$().css('color', 'lightgrey');
                         },
                         onSelect: function (oEvent) {
                             var listselected = ''
