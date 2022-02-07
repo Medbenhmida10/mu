@@ -286,6 +286,7 @@ toggleOpenState: function(oEvent) {
                                 }
                                 
                         }
+                            this.getView().byId("Tree").getItems()[3].setBlocked(true);
 $('.sapMTreeItemBaseChildren').css('background-color', 'white');
                             sap.ui.getCore().byId(this.byId("Tree").getItems()[5].$().find('.sapMCb').attr('id')).setEnabled(false);
                             this.byId("Tree").getItems()[5].$().css('color', 'lightgrey');
