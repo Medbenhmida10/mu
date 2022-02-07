@@ -255,7 +255,7 @@
                             var oModel = new JSONModel(data);
                             sap.ui.getCore().setModel(oModel, that.widgetName);
                             $('.sapMTreeItemBaseChildren').css('background-color', 'white');
-                            sap.ui.getCore().byId("__xmlview1--Tree").getItems()[4].setBlocked(true);
+                            
                         },
 toggleOpenState: function(oEvent) {
     $('.sapMTreeItemBaseChildren').css('background-color', 'white');
@@ -283,15 +283,13 @@ toggleOpenState: function(oEvent) {
                                         this.byId("Tree").getItems()[3].setSelected(true);
                                         time = 0; 
                                     }
+                                    this.byId("Tree").getItems()[5].setBlocked(true);
                                 }
                                 
                         }
                             
 $('.sapMTreeItemBaseChildren').css('background-color', 'white');
-                            sap.ui.getCore().byId(this.byId("Tree").getItems()[5].$().find('.sapMCb').attr('id')).setEnabled(false);
-                            this.byId("Tree").getItems()[5].$().css('color', 'lightgrey');
-                            sap.ui.getCore().byId(this.byId("Tree").getItems()[6].$().find('.sapMCb').attr('id')).setEnabled(false);
-                            this.byId("Tree").getItems()[6].$().css('color', 'lightgrey');
+
                             sap.ui.getCore().byId(this.byId("Tree").getItems()[7].$().find('.sapMCb').attr('id')).setEnabled(false);
                             this.byId("Tree").getItems()[7].$().css('color', 'lightgrey');
                         },
