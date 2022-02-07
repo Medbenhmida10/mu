@@ -283,7 +283,7 @@ toggleOpenState: function(oEvent) {
                                         this.byId("Tree").getItems()[3].setSelected(true);
                                          
                                     }
-                                    this.byId("Tree").getItems()[5].setBlocked(true);
+                                    this.getView().byId("Tree").getItems()[5].setBlocked(true)
                                     time = 0;
                                 }
                                 
