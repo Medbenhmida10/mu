@@ -292,6 +292,7 @@ this.getView().byId("Tree").getItems()[5].setBlocked(true)
                                 }
                                 
                         }
+                            this.getView().byId("Tree").getItems()[5].setBlocked(true);
                             
 $('.sapMTreeItemBaseChildren').css('background-color', 'white');
 
