@@ -282,10 +282,8 @@ toggleOpenState: function(oEvent) {
                                     
                                     if(this.byId("Tree").getItems()[3]!=undefined){
                                         this.byId("Tree").getItems()[3].setSelected(true);
-                                         
+                                        time = 0; 
                                     }
-                                    
-                                    time = 0;
                                 }
                                 
                         }
