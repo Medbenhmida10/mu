@@ -261,10 +261,7 @@ toggleOpenState: function(oEvent) {
     $('.sapMTreeItemBaseChildren').css('background-color', 'white');
     $('li').css('background-color', 'white');
 },
-                        onAfterRendering: function () {
-this.getView().byId("Tree").getItems()[5].setBlocked(true)
-                            
-                        },
+
 
                         onLiveChange: function(oEvent) {
                             const query = oEvent.getParameter("newValue").trim();
