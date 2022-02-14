@@ -284,10 +284,14 @@ toggleOpenState: function(oEvent) {
                                         this.byId("Tree").getItems()[3].setSelected(true);
                                         time = 0; 
                                     }
+                                    if(this.byId("Tree").getItems()[5]!=undefined){
+                                        this.getView().byId("Tree").getItems()[5].setBlocked(true);
+                                        time = 0; 
+                                    }
                                 }
                                 
                         }
-                            this.getView().byId("Tree").getItems()[5].setBlocked(true);
+                            
                             
 $('.sapMTreeItemBaseChildren').css('background-color', 'white');
 
