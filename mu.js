@@ -279,10 +279,11 @@ toggleOpenState: function(oEvent) {
                             if(time>0){
                                 if(this.byId("Tree")!=undefined){
                                     this.byId("Tree").expandToLevel(9999);
-                                    sap.ui.getCore().byId(this.byId("Tree").getItems()[7].$().find('.sapMCb').attr('id')).setEnabled(false);
-                            this.byId("Tree").getItems()[7].$().css('color', 'lightgrey');
-                                    if(this.byId("Tree").getItems()[3]!=undefined){
+                                    
+                                    if(this.byId("Tree").getItems()[7]!=undefined){
                                         this.byId("Tree").getItems()[3].setSelected(true);
+                                        sap.ui.getCore().byId(this.byId("Tree").getItems()[7].$().find('.sapMCb').attr('id')).setEnabled(false);
+                            this.byId("Tree").getItems()[7].$().css('color', 'lightgrey');
                                         time = 0;
                                     }
                                 }    
