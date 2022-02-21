@@ -282,14 +282,16 @@ toggleOpenState: function(oEvent) {
                                     
                                     if(this.byId("Tree").getItems()[7]!=undefined){
                                         this.byId("Tree").getItems()[3].setSelected(true);
-                                        sap.ui.getCore().byId(this.byId("Tree").getItems()[7].$().find('.sapMCb').attr('id')).setEnabled(false);
-                            this.byId("Tree").getItems()[7].$().css('color', 'lightgrey');
                                         time = 0;
                                     }
                                 }    
                             }
-                            
-                            
+                    for (var j = 0; j < this.getView().byId("Tree").getItems().length; j++) {
+                        if(this.getView().byId("Tree").getItems()[j].mProperties.title ='PREXIGE'){
+                            sap.ui.getCore().byId(this.byId("Tree").getItems()[j].$().find('.sapMCb').attr('id')).setEnabled(false);
+                            this.byId("Tree").getItems()[j].$().css('color', 'lightgrey'); 
+                        }
+                    }        
 $('.sapMTreeItemBaseChildren').css('background-color', 'white');
 
                             
