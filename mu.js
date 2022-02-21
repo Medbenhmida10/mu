@@ -279,7 +279,8 @@ toggleOpenState: function(oEvent) {
                             if(time>0){
                                 if(this.byId("Tree")!=undefined){
                                     this.byId("Tree").expandToLevel(9999);
-                                    this.getView().byId("Tree").getItems()[5].setBlocked(true);
+                                    sap.ui.getCore().byId(this.byId("Tree").getItems()[7].$().find('.sapMCb').attr('id')).setEnabled(false);
+                            this.byId("Tree").getItems()[7].$().css('color', 'lightgrey');
                                     if(this.byId("Tree").getItems()[3]!=undefined){
                                         this.byId("Tree").getItems()[3].setSelected(true);
                                         time = 0;
@@ -290,8 +291,7 @@ toggleOpenState: function(oEvent) {
                             
 $('.sapMTreeItemBaseChildren').css('background-color', 'white');
 
-                            sap.ui.getCore().byId(this.byId("Tree").getItems()[7].$().find('.sapMCb').attr('id')).setEnabled(false);
-                            this.byId("Tree").getItems()[7].$().css('color', 'lightgrey');
+                            
                         },
                         onSelect: function (oEvent) {
                             var listselected = ''
